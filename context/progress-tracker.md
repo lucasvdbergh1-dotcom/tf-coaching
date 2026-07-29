@@ -8,6 +8,25 @@ change.
 - In progress — gemigreerd naar Next.js 15 + Tailwind v4 +
   TypeScript strict
 
+## Completed (session 2026-07-29, part 19 — Pages op Next-build)
+
+- GitHub Pages omgezet van branch-root naar GitHub Actions:
+  .github/workflows/deploy.yml bouwt de export met
+  NEXT_PUBLIC_BASE_PATH=/tf-coaching en deployt out/ via
+  actions/deploy-pages. Pages-source via gh api op
+  build_type=workflow gezet.
+- basePath-ondersteuning: next.config.ts leest
+  NEXT_PUBLIC_BASE_PATH (lokaal leeg → dev blijft op /);
+  asset-src's in page.tsx via BP-constante, noise-achtergrond
+  als --bg-noise CSS-var vanuit layout.tsx (CSS kan geen env
+  lezen), favicon via app/favicon.ico-conventie.
+- Oude statische site verwijderd uit git: index.html + assets/
+  (kopieën staan in public/assets; assets/refs bestaat alleen
+  nog lokaal, blijft gitignored).
+- Live geverifieerd: https://lucasvdbergh1-dotcom.github.io/tf-coaching/
+  rendert de Next-versie correct (screenshot
+  assets/refs/live-pages.png). Commits 88a81a7 + 3f27bf8.
+
 ## Completed (session 2026-07-29, part 18 — fontbug migratie gefixt)
 
 - Migratiebug gevonden (gemeld door Lucas als "lettertype
