@@ -191,6 +191,15 @@ change.
 
 ## Completed (session 2026-07-29, part 9 — mobile responsive)
 
+- Contactfoto herpositioneerd: object-position center 80% →
+  center 25% zodat het hoofd zichtbaar is (zelfde foto als
+  hero, die op center 15-20% staat).
+- Marquee (lint) naadloos oneindig gemaakt: flex-gap verving
+  door padding-right op de spans (gap brak de -50%-loop), 4
+  tekstkopieën i.p.v. 2 (geen lege ruimte op brede schermen),
+  animatie 44s i.p.v. 22s (zelfde snelheid bij dubbele track).
+  Lint iets lager gezet: margin -24px → 0 (hing over de
+  statsbalk).
 - Ghost-woorden doorgetrokken naar alle secties: herbruikbare
   `.section-ghost`-klasse (zelfde stijl als "FOCUS" bij
   diensten: gecentreerd bovenin, 16vw, transparant met
