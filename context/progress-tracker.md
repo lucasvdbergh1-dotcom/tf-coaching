@@ -10,11 +10,12 @@ change.
 
 ## Completed (session 2026-07-29, part 24 — mobiel: ruimte boven Mindset/Start-ghosts)
 
-- Onder 960px kregen .testimonial-copy en .contact-copy
-  margin-top 44px: de ghosts (top -50px mobiel) staken anders
-  boven de grid-gap van 48px uit en plakten tegen de foto
-  erboven ("Mindset" bij de quote, "Start" bij contact).
-  Geverifieerd met Playwright-screenshots op 390px.
+- Onder 960px kregen .story-copy, .testimonial-copy en
+  .contact-copy margin-top 44px: de ghosts (top -50px mobiel)
+  staken anders boven de grid-gap van 48px uit en plakten
+  tegen de foto erboven ("Verhaal" bij over-mij, "Mindset"
+  bij de quote, "Start" bij contact). Geverifieerd met
+  Playwright-screenshots op 390px (~42px lucht gemeten).
 
 ## Completed (session 2026-07-29, part 23 — tellende stats onder de hero)
 
