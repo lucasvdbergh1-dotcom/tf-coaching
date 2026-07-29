@@ -191,6 +191,18 @@ change.
 
 ## Completed (session 2026-07-29, part 9 — mobile responsive)
 
+- Hero-fade versterkt: desktop linkerkant-gradient donkerder
+  (0.75 op 28%, 0.3 op 62% i.p.v. 0.35 op 35%). Op mobiel
+  (<960px) werd de fade verborgen; nu een bottom-fade over de
+  420px-hoge foto (transparant tot 50%, naar bg-base onderaan)
+  zodat de foto in de zwarte content overloopt. Fade-element
+  staat op top: 76px — gelijk aan de hero padding-top; beweegt
+  die, dan moet dit mee.
+- Over-mij-foto met groen kader (.story-media::after) mobile-
+  responsive gemaakt: kader stak 24px links uit en werd
+  afgekapt door overflow-x hidden. Onder 960px: 24px
+  linkermarge + foto 440px hoog; onder 600px: kader-offset
+  verkleind naar 14px, marge 14px, foto 360px hoog.
 - Mobiel geverifieerd met Playwright op 390px (iPhone-breedte,
   @2x): 12px horizontale overflow opgespoord (footer-grid met
   lang mailadres) en gefixt. Fixes: footer 1 kolom onder
