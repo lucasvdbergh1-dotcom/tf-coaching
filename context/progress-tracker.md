@@ -75,6 +75,15 @@ change.
   "Wacht niet tot 'ooit'" CTA band.
 - Reference screenshots stored in `assets/refs/`.
 
+## Completed (session 2026-07-29, part 15 — GitHub + hosting)
+
+- Git-repo geïnitialiseerd (main), eerste commit, gepusht
+  naar GitHub: https://github.com/lucasvdbergh1-dotcom/tf-coaching
+  (public). GitHub Pages aangezet (main, root):
+  https://lucasvdbergh1-dotcom.github.io/tf-coaching/
+  .gitignore sluit node_modules/, assets/refs/ en losse
+  Schermafbeelding*.png uit.
+
 ## Completed (session 2026-07-29, part 14 — niveaus-sectie (licht blok))
 
 - Nieuwe sectie #niveaus toegevoegd onder Mijn aanpak,
