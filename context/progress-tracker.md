@@ -5,7 +5,75 @@ change.
 
 ## Current Phase
 
-- In progress — first design prototype
+- In progress — gemigreerd naar Next.js 15 + Tailwind v4 +
+  TypeScript strict
+
+## Completed (session 2026-07-29, part 18 — fontbug migratie gefixt)
+
+- Migratiebug gevonden (gemeld door Lucas als "lettertype
+  aangepast"): sinds de Next-migratie viel de HELE site terug
+  op het systeemfont. Oorzaak: de next/font-variabelen
+  (--font-anton/--font-archivo) stonden als klasse op <body>,
+  maar globals.css leest ze in :root (<html>) — één niveau
+  hoger, waar ze niet bestaan → --font-display/--font-body
+  invalid → Anton en Archivo laadden nergens. Fix: fontklassen
+  verplaatst naar <html> in app/layout.tsx. Geverifieerd via
+  computed styles (h1 = Anton, body = Archivo, faces loaded)
+  en screenshots. Les: next/font variable-klassen op <html>
+  zetten als :root ernaar verwijst.
+
+## Completed (session 2026-07-29, part 17 — eyebrow-stijl uniform)
+
+- Alle eyebrows (labels boven titels) gebruiken nu de
+  Trainingsimpact-stijl: groen ruitje (9px, rotate 45°) i.p.v.
+  het 28px-streepje. `.eyebrow::before` omgezet, het
+  `.section-head .eyebrow::after`-sluitstreepje verwijderd, en
+  de aparte `.levels-eyebrow`-klasse opgeruimd (niveaus-sectie
+  gebruikt nu de generieke `.eyebrow`). Alleen in de Next-app
+  (app/globals.css + app/page.tsx); de oude index.html is
+  bewust ongemoeid. Visueel geverifieerd per sectie
+  (assets/refs/eyebrow-*.png).
+
+## Completed (session 2026-07-29, part 16 — Next.js-migratie)
+
+- Migratie naar Next.js 15 (App Router, static export) +
+  Tailwind v4 (via @tailwindcss/postcss) + TS strict. Een
+  eerdere poging crashte tijdens npm install; opnieuw
+  geïnstalleerd en gescaffold: tsconfig.json (strict),
+  next.config.ts (output: "export", images.unoptimized,
+  outputFileTracingRoot), postcss.config.mjs, app/layout.tsx
+  (metadata + next/font Anton/Archivo via --font-anton /
+  --font-archivo), app/globals.css (@import "tailwindcss" +
+  alle bestaande CSS 1-op-1, fontvars wijzen nu naar de
+  next/font-variabelen), app/page.tsx ("use client", volledige
+  pagina als JSX; nav-toggle en niveaus-accordion als React
+  state, contactform als onSubmit-handler, reveal/step-
+  observers + scroll-listener in useEffect met cleanup).
+- Assets gekopieerd naar public/assets/ (URL's nu /assets/...).
+  De oude assets/-map en index.html staan er nog: GitHub Pages
+  serveert momenteel index.html vanaf de root. Na akkoord op de
+  Next-versie: index.html + assets/ verwijderen en Pages
+  omzetten naar een build-workflow die out/ deployt.
+- Geverifieerd: `npm run build` slaagt (TS strict check
+  inbegrepen) en levert statische export in out/; full-page
+  screenshots oud vs. nieuw (assets/refs/old-desktop.png vs
+  next-desktop.png) zijn visueel identiek.
+- .gitignore uitgebreid met .next/, out/, next-env.d.ts.
+- CSS is nog custom (geen Tailwind-utilities); Tailwind v4 is
+  wél volledig aangesloten voor nieuw werk.
+- Daarna alles naar latest geüpgraded: Next 16.2.12
+  (Turbopack), React 19.2.8, TypeScript 7.0.2, Tailwind 4.3.3,
+  @types/node 26. Next 16 vereist voor TS 7 de vlag
+  experimental.useTypeScriptCli in next.config.ts (de
+  TS 7-compiler-API wordt nog niet native ondersteund; werkt
+  die vlag ooit niet meer, dan is typescript@6 het alternatief).
+  Next herschreef tsconfig.json (jsx: react-jsx + extra
+  include). Volledigheid geverifieerd: alle content-markers uit
+  de oude index.html zitten in out/index.html en de hero
+  rendert pixelgetrouw (assets/refs/next16-hero.png).
+- npm audit meldt 3 high in Next's gebundelde postcss/sharp —
+  transitief, geen fix beschikbaar; alleen build-time relevant
+  bij een statische export.
 
 ## Current Goal
 
@@ -337,9 +405,13 @@ referentie voor een eventuele latere, selectieve toepassing.
 
 ## Architecture Decisions
 
-- Prototype is a single self-contained `index.html`
-  (embedded CSS/JS, no build step) so the design can be
-  reviewed instantly; stack decision deferred.
+- Stack: Next.js 15 App Router met static export
+  (output: "export" → out/), Tailwind v4, TypeScript strict.
+  De site blijft één statische pagina; geen server runtime
+  nodig, dus deploybaar op GitHub Pages.
+- Het oude prototype (`index.html`, embedded CSS/JS) blijft
+  tijdelijk staan tot de Pages-deploy is omgezet naar de
+  Next-build.
 
 ## Session Notes
 
