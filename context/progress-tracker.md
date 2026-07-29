@@ -191,6 +191,23 @@ change.
 
 ## Completed (session 2026-07-29, part 9 — mobile responsive)
 
+- Ghost-woorden doorgetrokken naar alle secties: herbruikbare
+  `.section-ghost`-klasse (zelfde stijl als "FOCUS" bij
+  diensten: gecentreerd bovenin, 16vw, transparant met
+  text-stroke 6%). Toegevoegd: Verhaal (over-mij), Proces
+  (aanpak), Groei (niveaus), Mindset (overtuiging), Community
+  (Instagram), Start (contact). Cta-banner (fotoachtergrond)
+  en contact-band (smalle groene balk) bewust overgeslagen.
+- Titel-accenten doorgetrokken: generieke regel `.display em`
+  (text-muted grijs, zoals contactkaart-titel; geen italic) +
+  accentwoord toegevoegd aan alle titels die nog één kleur
+  hadden: "mee help", "onverslaanbaar", "lichaam en geest",
+  "snelle fixes", "Instagram". Hero-titel (3 regels) heeft nu
+  hetzelfde 3-gradaties-verloop als de aanpak-titel: spans met
+  wit / #8f8f8f / #545454 (em + groene `.hero h1 em`-regel
+  vervangen). Cta-banner (groen) en contact-band
+  (donkergroen) behouden hun eigen em-kleur via specifiekere
+  selectors.
 - Hero-fade versterkt: desktop linkerkant-gradient donkerder
   (0.75 op 28%, 0.3 op 62% i.p.v. 0.35 op 35%). Op mobiel
   (<960px) werd de fade verborgen; nu een bottom-fade over de

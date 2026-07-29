@@ -72,6 +72,8 @@ a { color: inherit; text-decoration: none; }
 
 .section-title { font-size: clamp(34px, 5vw, 58px); }
 
+.display em { font-style: normal; color: var(--text-muted); }
+
 .muted { color: var(--text-muted); }
 
 /* ---------- buttons ---------- */
@@ -188,7 +190,9 @@ a { color: inherit; text-decoration: none; }
   font-size: clamp(48px, 7vw, 92px);
   margin: 18px 0 26px;
 }
-.hero h1 em { font-style: normal; color: var(--accent-primary); }
+.hero h1 span:nth-child(1) { color: var(--text-primary); }
+.hero h1 span:nth-child(3) { color: #8f8f8f; }
+.hero h1 span:nth-child(5) { color: #545454; }
 .hero p { max-width: 480px; color: var(--text-muted); margin-bottom: 38px; }
 .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
 
@@ -240,6 +244,21 @@ a { color: inherit; text-decoration: none; }
 
 /* ---------- sections ---------- */
 section { padding: 110px 0; position: relative; }
+.section-ghost {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-display);
+  font-size: clamp(90px, 16vw, 220px);
+  line-height: 1;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(244,242,239,0.06);
+  pointer-events: none;
+  white-space: nowrap;
+  user-select: none;
+}
 .section-head { text-align: center; max-width: 620px; margin: 0 auto 64px; }
 .section-head .eyebrow { justify-content: center; }
 .section-head .eyebrow::after {
@@ -820,7 +839,7 @@ footer { background: #060607; padding: 80px 0 0; }
     <div class="hero-content">
       <span class="hero-ghost" aria-hidden="true">Coaching</span>
       <span class="eyebrow">Thom Fidder &mdash; Personal Training in Hulshorst</span>
-      <h1 class="display">Sterker.<br>Fitter.<br><em>Zelfverzekerder.</em></h1>
+      <h1 class="display"><span>Sterker.</span><br><span>Fitter.</span><br><span>Zelfverzekerder.</span></h1>
       <p>Geen snelle fixes, maar een praktisch en haalbaar plan dat &eacute;cht bij jou past. Samen zetten we een duurzame stap richting een fitter en gezonder leven.</p>
       <div class="hero-actions">
         <a href="#contact" class="btn btn-primary">Boek een gratis kennismaking</a>
@@ -850,7 +869,7 @@ footer { background: #060607; padding: 80px 0 0; }
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">Dit kan ik voor jou betekenen</span>
-      <h2 class="display section-title">Waar ik je mee help</h2>
+      <h2 class="display section-title">Waar ik je mee <em>help</em></h2>
     </div>
     <div class="program-grid">
       <article class="program-card reveal">
@@ -876,13 +895,14 @@ footer { background: #060607; padding: 80px 0 0; }
 </section>
 
 <section id="over-mij">
+  <span class="section-ghost" aria-hidden="true">Verhaal</span>
   <div class="container story-grid">
     <div class="story-media reveal">
       <img src="assets/thom-overmij.png" alt="Thom Fidder begeleidt een klant tijdens een ringtraining" loading="lazy">
     </div>
     <div class="story-copy reveal">
       <span class="eyebrow">Over mij</span>
-      <h2 class="display section-title">Van onzeker naar onverslaanbaar</h2>
+      <h2 class="display section-title">Van onzeker naar <em>onverslaanbaar</em></h2>
       <p>Welkom! Mijn naam is Thom, ik ben 26 jaar en kom uit Hulshorst. Mijn reis begon vanuit een moeilijke plek: als onzekere jongen met overgewicht worstelde ik met mijn zelfbeeld en gezondheid. Maar op een dag besloot ik dat het anders moest.</p>
       <p>Met vastberadenheid viel ik 56 kilo af. Wat begon als een persoonlijke strijd, groeide uit tot een passie: bodybuilding. Die transformatie was niet alleen fysiek, maar ook mentaal. Nu gebruik ik mijn ervaringen om anderen te helpen hun zelfbeeld en fitheid te verbeteren.</p>
       <ul class="story-list">
@@ -896,6 +916,7 @@ footer { background: #060607; padding: 80px 0 0; }
 </section>
 
 <section class="expect" id="aanpak">
+  <span class="section-ghost" aria-hidden="true">Proces</span>
   <div class="container">
     <div class="steps-head reveal">
       <span class="eyebrow">Mijn aanpak</span>
@@ -947,10 +968,11 @@ footer { background: #060607; padding: 80px 0 0; }
 </section>
 
 <section class="levels" id="niveaus">
+  <span class="section-ghost" aria-hidden="true">Groei</span>
   <div class="container levels-grid">
     <div class="levels-copy reveal">
       <span class="levels-eyebrow">Trainingsimpact</span>
-      <h2 class="display">Transformeer lichaam en geest</h2>
+      <h2 class="display">Transformeer <em>lichaam en geest</em></h2>
       <div class="levels-list">
         <div class="level open">
           <button class="level-head" type="button" aria-expanded="true">
@@ -988,13 +1010,14 @@ footer { background: #060607; padding: 80px 0 0; }
 </section>
 
 <section class="tinted">
+  <span class="section-ghost" aria-hidden="true">Mindset</span>
   <div class="container testimonial-grid">
     <div class="testimonial-media reveal">
       <img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&fit=crop&w=1000&q=80" alt="Barbell in de sportschool" loading="lazy">
     </div>
     <div class="reveal">
       <span class="eyebrow">Mijn overtuiging</span>
-      <h2 class="display section-title" style="margin: 14px 0 40px;">Geen snelle fixes</h2>
+      <h2 class="display section-title" style="margin: 14px 0 40px;">Geen <em>snelle fixes</em></h2>
       <blockquote>
         <span class="quote-mark">&ldquo;</span>
         <p>&ldquo;Ik geloof niet in crashdi&euml;ten, maar in echte, duurzame verandering. Jouw verhaal is belangrijk &mdash; ik luister aandachtig om de juiste weg naar jouw doelen in te slaan.&rdquo;</p>
@@ -1019,9 +1042,10 @@ footer { background: #060607; padding: 80px 0 0; }
 </section>
 
 <section class="insta">
+  <span class="section-ghost" aria-hidden="true">Community</span>
   <div class="container section-head reveal">
     <span class="eyebrow">Social</span>
-    <h2 class="display section-title">Volg mij op Instagram</h2>
+    <h2 class="display section-title">Volg mij op <em>Instagram</em></h2>
   </div>
   <div class="insta-grid">
     <a href="https://www.instagram.com/thomfiddercoaching" target="_blank" rel="noopener" aria-label="Instagram @thomfiddercoaching"><img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=500&q=80" alt="Trainingsmoment" loading="lazy"></a>
@@ -1034,6 +1058,7 @@ footer { background: #060607; padding: 80px 0 0; }
 </section>
 
 <section class="contact" id="contact">
+  <span class="section-ghost" aria-hidden="true">Start</span>
   <div class="container contact-grid">
     <div class="contact-media reveal">
       <img src="assets/thom-home.jpg" alt="Thom Fidder met dumbbells in de sportschool" loading="lazy">
