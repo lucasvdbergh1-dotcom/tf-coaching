@@ -89,9 +89,34 @@ export default function Home() {
     window.addEventListener("scroll", updateStepsScroll, { passive: true });
     updateStepsScroll();
 
+    const countObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          countObserver.unobserve(entry.target);
+          const el = entry.target as HTMLElement;
+          const target = Number(el.dataset.count);
+          const duration = 1400;
+          const start = performance.now();
+          function tick(now: number) {
+            const p = Math.min(1, (now - start) / duration);
+            const eased = 1 - Math.pow(1 - p, 3);
+            el.textContent = String(Math.round(eased * target));
+            if (p < 1) requestAnimationFrame(tick);
+          }
+          requestAnimationFrame(tick);
+        });
+      },
+      { threshold: 0.5 }
+    );
+    document
+      .querySelectorAll<HTMLElement>("[data-count]")
+      .forEach((el) => countObserver.observe(el));
+
     return () => {
       revealObserver.disconnect();
       stepObserver.disconnect();
+      countObserver.disconnect();
       window.removeEventListener("scroll", updateStepsScroll);
     };
   }, []);
@@ -167,10 +192,10 @@ export default function Home() {
 
       <div className="stats-strip">
         <div className="container stats-strip-inner">
-          <div className="stat"><strong>8 <em>+</em></strong><span>Jaar ervaring</span></div>
-          <div className="stat"><strong><em>-</em> 56 kg</strong><span>Eigen transformatie</span></div>
+          <div className="stat"><strong><span data-count="8">8</span> <em>+</em></strong><span>Jaar ervaring</span></div>
+          <div className="stat"><strong><em>-</em> <span data-count="56">56</span> kg</strong><span>Eigen transformatie</span></div>
           <div className="stat"><strong>1<em>e</em></strong><span>Sessie altijd gratis</span></div>
-          <div className="stat"><strong>100 <em>%</em></strong><span>Gepersonaliseerd plan</span></div>
+          <div className="stat"><strong><span data-count="100">100</span> <em>%</em></strong><span>Gepersonaliseerd plan</span></div>
         </div>
       </div>
 

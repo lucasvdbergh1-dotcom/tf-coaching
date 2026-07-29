@@ -8,6 +8,30 @@ change.
 - In progress — gemigreerd naar Next.js 15 + Tailwind v4 +
   TypeScript strict
 
+## Completed (session 2026-07-29, part 23 — tellende stats onder de hero)
+
+- De getallen in de stats-strip (8, 56, 100) tellen nu van 0
+  naar hun eindwaarde (1,4s, ease-out cubic) zodra de strip in
+  beeld komt: spans met data-count + IntersectionObserver met
+  rAF-loop in de bestaande useEffect van page.tsx. "1e" blijft
+  vast (geen data-count). Labelregel .stat span versmald naar
+  .stat > span zodat de count-span binnen strong de grote
+  display-maat houdt. Geverifieerd via Playwright-screenshots
+  (mid-animatie + eindstand).
+
+## Completed (session 2026-07-29, part 22 — hoekbeugels op groene knoppen)
+
+- .btn-primary heeft nu twee gespiegelde hoekbeugels in
+  #8f8f8f, zelfde grijstint als het woord "Fitter." in de hero
+  (2px, ::before linksboven met border-top/left, ::after
+  rechtsonder met border-bottom/right; 55% breed, 62% hoog,
+  7px buiten de knop) met een opening midden-boven en
+  midden-onder, naar de gymnastic-template screenshot. Bij
+  hover schuiven de beugels 3px naar binnen (vervangt de oude
+  translateY(-2px)-lift). Alleen de groene knoppen; ghost/dark
+  ongewijzigd. Geverifieerd via Playwright-screenshots
+  (default + hover) tegen de 4x-uitvergrote referentie.
+
 ## Completed (session 2026-07-29, part 21 — ghosts zichtbaarder + WhatsApp-knop)
 
 - Ghosts groter/hoger na feedback: .section-ghost en .hero-ghost
