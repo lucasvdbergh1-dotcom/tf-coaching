@@ -8,6 +8,21 @@ change.
 - In progress — gemigreerd naar Next.js 15 + Tailwind v4 +
   TypeScript strict
 
+## Completed (session 2026-07-29, part 20 — ghost-woorden achter titels)
+
+- Ghost-woorden verplaatst van gecentreerd bovenin de sectie
+  naar achter de sectietitel, in hero-stijl: .section-ghost
+  heeft nu dezelfde maat/offset/stroke als .hero-ghost
+  (clamp 70-140px, top -34px, left -6px, stroke 0.1; mobiel
+  64px/-22px). Spans verplaatst het titelblok in (story-copy,
+  steps-head, levels-copy, testimonial-copy [nieuwe klasse],
+  contact-copy, section-head); die containers kregen
+  position: relative. Bij gecentreerde koppen (diensten,
+  insta) blijft het woord gecentreerd achter de titel.
+  "FOCUS" van diensten is nu een gewone ghost-span i.p.v.
+  .programs::before. Per sectie geverifieerd
+  (assets/refs/vp-*.png). Nog niet gecommit.
+
 ## Completed (session 2026-07-29, part 19 — Pages op Next-build)
 
 - GitHub Pages omgezet van branch-root naar GitHub Actions:

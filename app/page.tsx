@@ -187,6 +187,7 @@ export default function Home() {
       <section className="programs" id="diensten">
         <div className="container">
           <div className="section-head reveal">
+            <span className="section-ghost" aria-hidden="true">Focus</span>
             <span className="eyebrow">Dit kan ik voor jou betekenen</span>
             <h2 className="display section-title">Waar ik je mee <em>help</em></h2>
           </div>
@@ -238,7 +239,6 @@ export default function Home() {
       </section>
 
       <section id="over-mij">
-        <span className="section-ghost" aria-hidden="true">Verhaal</span>
         <div className="container story-grid">
           <div className="story-media reveal">
             <img
@@ -248,6 +248,7 @@ export default function Home() {
             />
           </div>
           <div className="story-copy reveal">
+            <span className="section-ghost" aria-hidden="true">Verhaal</span>
             <span className="eyebrow">Over mij</span>
             <h2 className="display section-title">Van onzeker naar <em>onverslaanbaar</em></h2>
             <p>
@@ -274,9 +275,9 @@ export default function Home() {
       </section>
 
       <section className="expect" id="aanpak">
-        <span className="section-ghost" aria-hidden="true">Proces</span>
         <div className="container">
           <div className="steps-head reveal">
+            <span className="section-ghost" aria-hidden="true">Proces</span>
             <span className="eyebrow">Mijn aanpak</span>
             <h2 className="display">
               <span>Wat kun je</span><br /><span>van mij</span><br /><span>verwachten?</span>
@@ -349,9 +350,9 @@ export default function Home() {
       </section>
 
       <section className="levels" id="niveaus">
-        <span className="section-ghost" aria-hidden="true">Groei</span>
         <div className="container levels-grid">
           <div className="levels-copy reveal">
+            <span className="section-ghost" aria-hidden="true">Groei</span>
             <span className="eyebrow">Trainingsimpact</span>
             <h2 className="display">Transformeer <em>lichaam en geest</em></h2>
             <div className="levels-list">
@@ -384,7 +385,6 @@ export default function Home() {
       </section>
 
       <section className="tinted">
-        <span className="section-ghost" aria-hidden="true">Mindset</span>
         <div className="container testimonial-grid">
           <div className="testimonial-media reveal">
             <img
@@ -393,7 +393,8 @@ export default function Home() {
               loading="lazy"
             />
           </div>
-          <div className="reveal">
+          <div className="testimonial-copy reveal">
+            <span className="section-ghost" aria-hidden="true">Mindset</span>
             <span className="eyebrow">Mijn overtuiging</span>
             <h2 className="display section-title" style={{ margin: "14px 0 40px" }}>
               Geen <em>snelle fixes</em>
@@ -431,8 +432,8 @@ export default function Home() {
       </section>
 
       <section className="insta">
-        <span className="section-ghost" aria-hidden="true">Community</span>
         <div className="container section-head reveal">
+          <span className="section-ghost" aria-hidden="true">Community</span>
           <span className="eyebrow">Social</span>
           <h2 className="display section-title">Volg mij op <em>Instagram</em></h2>
         </div>
@@ -452,7 +453,6 @@ export default function Home() {
       </section>
 
       <section className="contact" id="contact">
-        <span className="section-ghost" aria-hidden="true">Start</span>
         <div className="container contact-grid">
           <div className="contact-media reveal">
             <img
@@ -486,6 +486,7 @@ export default function Home() {
             </div>
           </div>
           <div className="contact-copy reveal">
+            <span className="section-ghost" aria-hidden="true">Start</span>
             <span className="eyebrow">Contact</span>
             <h2 className="display section-title" style={{ marginTop: 14 }}>
               Klaar om te starten? <em>Ik help je op weg.</em>
