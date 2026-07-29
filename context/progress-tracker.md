@@ -8,6 +8,14 @@ change.
 - In progress — gemigreerd naar Next.js 15 + Tailwind v4 +
   TypeScript strict
 
+## Completed (session 2026-07-29, part 24 — mobiel: ruimte boven Mindset/Start-ghosts)
+
+- Onder 960px kregen .testimonial-copy en .contact-copy
+  margin-top 44px: de ghosts (top -50px mobiel) staken anders
+  boven de grid-gap van 48px uit en plakten tegen de foto
+  erboven ("Mindset" bij de quote, "Start" bij contact).
+  Geverifieerd met Playwright-screenshots op 390px.
+
 ## Completed (session 2026-07-29, part 23 — tellende stats onder de hero)
 
 - De getallen in de stats-strip (8, 56, 100) tellen nu van 0

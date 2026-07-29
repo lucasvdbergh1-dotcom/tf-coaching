@@ -807,6 +807,7 @@ footer { background: #060607; padding: 80px 0 0; }
   .step-num { font-size: 96px; }
   .insta-grid { grid-template-columns: repeat(3, 1fr); }
   .story-grid, .testimonial-grid { grid-template-columns: 1fr; gap: 48px; }
+  .testimonial-copy, .contact-copy { margin-top: 44px; }
   .story-media { margin-left: 24px; }
   .story-media img { height: 440px; }
   .levels-grid { grid-template-columns: 1fr; gap: 48px; }
