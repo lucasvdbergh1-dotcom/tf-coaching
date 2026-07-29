@@ -8,6 +8,14 @@ change.
 - In progress — gemigreerd naar Next.js 15 + Tailwind v4 +
   TypeScript strict
 
+## Completed (session 2026-07-29, part 25 — mobiel: hero-fade dekte onderrand foto niet)
+
+- De mobiele hero-fade werd pas op de allerlaatste pixel
+  volledig dekkend (eindstop var(--bg-base) op 100%),
+  waardoor de foto onderaan hard afsneed: zichtbaar randje.
+  Eindstop naar 96% + overlay 421px (1px hoger dan de foto)
+  tegen subpixel-afronding. Gecheckt op 390px/DPR 3.
+
 ## Completed (session 2026-07-29, part 24 — mobiel: ruimte boven Mindset/Start-ghosts)
 
 - Onder 960px kregen .story-copy, .testimonial-copy en

@@ -791,8 +791,8 @@ footer { background: #060607; padding: 80px 0 0; }
   .hero-photo { position: static; display: block; width: 100%; height: 420px; object-position: center 20%; }
   .hero-photo-fade {
     top: 76px; left: 0; right: 0;
-    width: 100%; height: 420px;
-    background: linear-gradient(180deg, rgba(11,11,12,0) 50%, rgba(11,11,12,0.55) 78%, var(--bg-base) 100%);
+    width: 100%; height: 421px;
+    background: linear-gradient(180deg, rgba(11,11,12,0) 50%, rgba(11,11,12,0.55) 78%, var(--bg-base) 96%);
   }
   .hero .container { padding: 56px 0 72px; }
   .hero-ghost { font-size: 76px; top: -36px; }
