@@ -198,8 +198,9 @@ change.
   door padding-right op de spans (gap brak de -50%-loop), 4
   tekstkopieën i.p.v. 2 (geen lege ruimte op brede schermen),
   animatie 44s i.p.v. 22s (zelfde snelheid bij dubbele track).
-  Lint iets lager gezet: margin -24px → 0 (hing over de
-  statsbalk).
+  Lint daarna rechtgezet (rotate(-1deg) verwijderd) en met
+  margin -24px half over de onderrand van de statsbalk gelegd
+  (lint ~48px hoog, z-index 5 boven statsbalk z-index 4).
 - Ghost-woorden doorgetrokken naar alle secties: herbruikbare
   `.section-ghost`-klasse (zelfde stijl als "FOCUS" bij
   diensten: gecentreerd bovenin, 16vw, transparant met
