@@ -803,7 +803,7 @@ footer { background: #060607; padding: 80px 0 0; }
   .footer-grid a, .footer-grid p { overflow-wrap: anywhere; }
 }
 @media (max-width: 600px) {
-  section { padding: 72px 0; }
+  section { padding: 92px 0 72px; }
   .program-grid { grid-template-columns: 1fr; }
   .step-media { height: 160px; }
   .step-num { font-size: 76px; }
