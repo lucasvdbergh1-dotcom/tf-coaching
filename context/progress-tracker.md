@@ -8,6 +8,17 @@ change.
 - In progress — gemigreerd naar Next.js 15 + Tailwind v4 +
   TypeScript strict
 
+## Completed (session 2026-07-29, part 21 — ghosts zichtbaarder + WhatsApp-knop)
+
+- Ghosts groter/hoger na feedback: .section-ghost en .hero-ghost
+  op clamp 84-170px, stroke 0.16; secties top -90px, hero -64px
+  (mobiel 76px, -50px/-36px). Commits 9dc9fe1/05f8a79/33ea911.
+- Zwevende WhatsApp-knop rechtsonder (wa-float): groene cirkel
+  met officieel logo linkt naar wa.me/31612300288, witte
+  tekstballon "Vragen? App me gerust!" met staartje. Onder
+  600px alleen de knop. Beantwoordt de open vraag over de
+  WhatsApp-widget van de oude site. Commit 4c3f05a.
+
 ## Completed (session 2026-07-29, part 20 — ghost-woorden achter titels)
 
 - Ghost-woorden verplaatst van gecentreerd bovenin de sectie
