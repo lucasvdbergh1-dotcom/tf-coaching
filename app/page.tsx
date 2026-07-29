@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 
+const BP = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 const stepMarker = (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
     <circle cx="12" cy="12" r="2.4" fill="currentColor" stroke="none" />
@@ -138,7 +140,7 @@ export default function Home() {
 
       <header className="hero">
         <img
-          src="/assets/thom-home.jpg"
+          src={`${BP}/assets/thom-home.jpg`}
           alt="Thom Fidder traint met dumbbells"
           className="hero-photo"
         />
@@ -240,7 +242,7 @@ export default function Home() {
         <div className="container story-grid">
           <div className="story-media reveal">
             <img
-              src="/assets/thom-overmij.png"
+              src={`${BP}/assets/thom-overmij.png`}
               alt="Thom Fidder begeleidt een klant tijdens een ringtraining"
               loading="lazy"
             />
@@ -454,7 +456,7 @@ export default function Home() {
         <div className="container contact-grid">
           <div className="contact-media reveal">
             <img
-              src="/assets/thom-home.jpg"
+              src={`${BP}/assets/thom-home.jpg`}
               alt="Thom Fidder met dumbbells in de sportschool"
               loading="lazy"
             />
